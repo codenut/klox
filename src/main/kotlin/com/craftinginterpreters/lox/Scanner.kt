@@ -37,6 +37,7 @@ data class Scanner(val source: String) {
 
             '/' -> if (match('/')) {
                 while (peek() != '\n' && !isAtEnd()) advance()
+                // TODO: add support for /**/ comments
             } else {
                 addToken(TokenType.SLASH)
             }
